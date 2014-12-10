@@ -1,10 +1,22 @@
 'use strict';
 
 module.exports = function(grunt) {
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-traceur-simple');
   grunt.loadNpmTasks('grunt-simple-mocha');
 
   grunt.initConfig({
+    jshint: {
+      files: [
+        '**/*.js',
+        '!node_modules/**/*',
+        '!build/**/*'
+      ],
+      options: {
+        jshintrc: true
+      }
+    },
+
     traceur: {
       options: {
         includeRuntime: true,
@@ -23,5 +35,9 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['traceur', 'simplemocha']);
+  grunt.registerTask('default', [
+    'jshint',
+    'traceur',
+    'simplemocha'
+  ]);
 };
