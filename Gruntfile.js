@@ -2,6 +2,7 @@
 
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-traceur-simple');
   grunt.loadNpmTasks('grunt-simple-mocha');
 
@@ -15,6 +16,10 @@ module.exports = function(grunt) {
       options: {
         jshintrc: true
       }
+    },
+
+    clean: {
+      src: ['build/']
     },
 
     traceur: {
@@ -37,6 +42,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'jshint',
+    'clean',
     'traceur',
     'simplemocha'
   ]);
