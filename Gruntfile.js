@@ -11,7 +11,7 @@ module.exports = function(grunt) {
         traceurOptions: '--experimental --source-maps'
       },
 
-      fibonacci: {
+      build: {
         files: {
           'build/all_tests.js': ['lib/*.js', 'test/*.js']
         }
