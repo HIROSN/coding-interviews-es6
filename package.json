@@ -1,0 +1,27 @@
+{
+  "name": "coding-interviews-es6",
+  "version": "1.0.0",
+  "description": "Coding Interview Questions (ECMAScript 6)",
+  "scripts": {
+    "test": "node_modules/grunt-cli/bin/grunt"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HIROSN/coding-interviews-es6.git"
+  },
+  "author": "hirosn@live.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HIROSN/coding-interviews-es6/issues"
+  },
+  "homepage": "https://github.com/HIROSN/coding-interviews-es6",
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-simple-mocha": "^0.4.0"
+  },
+  "dependencies": {
+    "grunt-traceur-simple": "^0.9.7"
+  }
+}
