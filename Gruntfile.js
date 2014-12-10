@@ -3,6 +3,7 @@
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-traceur-simple');
   grunt.loadNpmTasks('grunt-simple-mocha');
 
@@ -20,6 +21,15 @@ module.exports = function(grunt) {
 
     clean: {
       src: ['build/']
+    },
+
+    copy: {
+      readme: {
+        cwd: 'test/',
+        expand: true,
+        src: ['README.md'],
+        dest: './'
+      }
     },
 
     traceur: {
@@ -43,6 +53,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', [
     'jshint',
     'clean',
+    'copy',
     'traceur',
     'simplemocha'
   ]);
