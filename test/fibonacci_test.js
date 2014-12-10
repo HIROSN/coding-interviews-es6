@@ -19,6 +19,7 @@ describe('Fibonacci tests', () => {
     yield {n: 11, fibonacci: 89};
     yield {n: 12, fibonacci: 144};
     yield {n: 100, fibonacci: 354224848179262000000};
+    yield {n: 10000, fibonacci: Infinity};
     yield {n: -1, fibonacci: undefined};
   };
 
