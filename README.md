@@ -5,4 +5,4 @@
 File | Category | Notes
 :--- | :------- | :----
 [fibonacci.js](lib/fibonacci.js) | DP | Fibonacci number
-[foo.js](lib/foo.js) | Other | TODO
+[palindrome.js](lib/palindrome.js) | Algorithm | Check if a linked list is palindrome
