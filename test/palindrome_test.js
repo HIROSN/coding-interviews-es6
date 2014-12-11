@@ -4,8 +4,11 @@ import { ListNode } from '../lib/palindrome';
 let expect = require('chai').expect;
 
 describe('Palindrome tests', () => {
+  let listNode;
+  beforeEach(() => { listNode = new ListNode(); });
+
   it('should find if a 7 letter word is a palindrome', () => {
-    expect(new ListNode()
+    expect(listNode
       .insert('R')
       .insert('A')
       .insert('C')
@@ -19,7 +22,7 @@ describe('Palindrome tests', () => {
   });
 
   it('should find if a 6 letter word is a palindrome', () => {
-    expect(new ListNode()
+    expect(listNode
       .insert('p')
       .insert('u')
       .insert('l')
@@ -32,7 +35,7 @@ describe('Palindrome tests', () => {
   });
 
   it('should find if a 7 letter word is not a palindrome', () => {
-    expect(new ListNode()
+    expect(listNode
       .insert('R')
       .insert('A')
       .insert('C')
@@ -46,7 +49,7 @@ describe('Palindrome tests', () => {
   });
 
   it('should find if a 6 letter word is not a palindrome', () => {
-    expect(new ListNode()
+    expect(listNode
       .insert('p')
       .insert('u')
       .insert('s')
@@ -59,7 +62,7 @@ describe('Palindrome tests', () => {
   });
 
   it('should find if a 2 letter word is a palindrome', () => {
-    expect(new ListNode()
+    expect(listNode
       .insert('C')
       .insert('C')
       .isPalindrome()
@@ -68,7 +71,7 @@ describe('Palindrome tests', () => {
   });
 
   it('should find if a 2 letter word is not a palindrome', () => {
-    expect(new ListNode()
+    expect(listNode
       .insert('C')
       .insert('D')
       .isPalindrome()
@@ -77,7 +80,7 @@ describe('Palindrome tests', () => {
   });
 
   it('should find one letter word is a palindrome', () => {
-    expect(new ListNode()
+    expect(listNode
       .insert('A')
       .isPalindrome()
     )
@@ -85,7 +88,7 @@ describe('Palindrome tests', () => {
   });
 
   it('is not a palindrome when the list is empty', () => {
-    expect(new ListNode()
+    expect(listNode
       .isPalindrome()
     )
     .equals(false);
