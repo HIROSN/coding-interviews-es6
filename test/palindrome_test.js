@@ -58,6 +58,24 @@ describe('Palindrome tests', () => {
     .to.equal(false);
   });
 
+  it('should find if a 2 letter word is a palindrome', () => {
+    expect(new ListNode()
+      .insert('C')
+      .insert('C')
+      .isPalindrome()
+    )
+    .equals(true);
+  });
+
+  it('should find if a 2 letter word is not a palindrome', () => {
+    expect(new ListNode()
+      .insert('C')
+      .insert('D')
+      .isPalindrome()
+    )
+    .equals(false);
+  });
+
   it('should find one letter word is a palindrome', () => {
     expect(new ListNode()
       .insert('A')
