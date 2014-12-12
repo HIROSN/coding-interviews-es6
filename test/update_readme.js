@@ -2,43 +2,56 @@
 
 let fs = require('fs');
 let expect = require('chai').expect;
+let async = require('async');
+
+const libPath = __dirname + '/../lib/';
+const readMePath = __dirname + '/../README.md';
+const options = {encoding: 'utf8'};
 
 describe('Update README.md', () => {
   it('should update README.md', (done) => {
-    fs.open(__dirname + '/../README.md', 'a', (err, fd) => {
-      expect(err).to.equal(null);
-      let libPath = __dirname + '/../lib/';
-
-      fs.readdir(libPath, (err, fileArray) => {
-        let files = fileArray.values();
-        const options = {encoding: 'utf8'};
-
-        let appendToReadme = (file) => {
-          if (file.done) {
-            fs.close(fd);
-            return done();
-          }
-
-          fs.readFile(libPath + file.value, options, (err, data) => {
-            expect(err).to.equal(null);
+    new Promise((resolve) => {
+      fs.open(readMePath, 'a', (err, fd) => {
+        expect(err).to.equal(null);
+        resolve(fd);
+      });
+    })
+    .then((fd) => {
+      return new Promise((resolve) => {
+        fs.readdir(libPath, (err, files) => {
+          expect(err).to.equal(null);
+          resolve({fd, files});
+        });
+      });
+    })
+    .then((results) => {
+      let {fd, files} = results;
+      async.eachSeries(files, (file, callback) => {
+        new Promise((resolve) => {
+          fs.readFile(libPath + file, options, (err, data) => {
+            if (err) { return callback(err); }
             let match = data.match(/\{ *\"category\" *:.*, *\"notes\" *:.*\}/);
-            expect(match).to.not.equal(null);
-            let info = JSON.parse(match[0]);
-            expect(info).to.not.equal(null);
-            expect(info.category).to.not.equal(undefined);
-            expect(info.notes).to.not.equal(undefined);
+            let info = match && JSON.parse(match[0]);
 
-            let buffer = new Buffer('[' + file.value + '](lib/' + file.value +
-              ') | ' + info.category + ' | ' + info.notes + '\n');
+            if (!info || !info.category || !info.notes) {
+              return callback('add category and notes');
+            }
 
-            fs.write(fd, buffer, 0, buffer.length, null, (err) => {
-              expect(err).to.equal(null);
-              appendToReadme(files.next());
-            });
+            resolve(new Buffer('[' + file + '](lib/' + file +
+              ') | ' + info.category + ' | ' + info.notes + '\n'));
           });
-        };
-
-        appendToReadme(files.next());
+        })
+        .then((buffer) => {
+          fs.write(fd, buffer, 0, buffer.length, null, (err) => {
+            expect(err).to.equal(null);
+            callback();
+          });
+        });
+      },
+      function(err) {
+        fs.close(fd);
+        expect(err).to.equal(undefined);
+        done();
       });
     });
   });
