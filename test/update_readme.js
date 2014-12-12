@@ -47,8 +47,7 @@ describe('Update README.md', () => {
             callback();
           });
         });
-      },
-      function(err) {
+      }, (err) => {
         fs.close(fd);
         expect(err).to.equal(undefined);
         done();
