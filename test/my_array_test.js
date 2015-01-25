@@ -1,6 +1,6 @@
 'use strict';
 
-import { MyArray } from '../lib/zip';
+import { MyArray } from '../lib/my_array';
 let expect = require('chai').expect;
 
 describe('Array.zip tests', () => {
