@@ -9,3 +9,4 @@ File | Category | Notes
 [fibonacci.js](lib/fibonacci.js) | DP | Fibonacci number
 [my_array.js](lib/my_array.js) | Array | Implement Array.concatAll and zip
 [palindrome.js](lib/palindrome.js) | Algorithm | Check if a linked list is palindrome
+[tree_to_array.js](lib/tree_to_array.js) | FP | Converting from a deeper tree to an array
