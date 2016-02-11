@@ -1,6 +1,6 @@
 'use strict';
 
-import { BinaryTreeNode } from '../lib/breathfirst';
+import { BinaryTreeNode } from '../lib/breathfirst.js';
 let expect = require('chai').expect;
 
 describe('Breath-first traversal tests', () => {

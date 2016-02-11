@@ -1,6 +1,6 @@
 'use strict';
 
-import { Fibonacci } from '../lib/fibonacci';
+import { Fibonacci } from '../lib/fibonacci.js';
 let expect = require('chai').expect;
 
 describe('Fibonacci tests', () => {

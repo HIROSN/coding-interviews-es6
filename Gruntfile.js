@@ -35,7 +35,7 @@ module.exports = function(grunt) {
     traceur: {
       options: {
         includeRuntime: true,
-        traceurOptions: '--experimental --source-maps'
+        traceurOptions: '--experimental'
       },
 
       build: {

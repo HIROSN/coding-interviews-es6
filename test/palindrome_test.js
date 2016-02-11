@@ -1,6 +1,6 @@
 'use strict';
 
-import { ListNode } from '../lib/palindrome';
+import { ListNode } from '../lib/palindrome.js';
 let expect = require('chai').expect;
 
 describe('Palindrome tests', () => {

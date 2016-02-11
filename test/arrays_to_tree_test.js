@@ -1,6 +1,6 @@
 'use strict';
 
-import { movieLists } from '../lib/arrays_to_tree';
+import { movieLists } from '../lib/arrays_to_tree.js';
 let expect = require('chai').expect;
 
 describe('Movie lists tests', () => {
