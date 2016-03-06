@@ -30,6 +30,7 @@ describe('Update README.md', () => {
         new Promise((resolve) => {
           fs.readFile(libPath + file, options, (err, data) => {
             if (err) { return callback(err); }
+            let test = file.replace(/\.js$/i, '_test.js');
             let match = data.match(/\{ *\"category\" *:.*, *\"notes\" *:.*\}/);
             let info = match && JSON.parse(match[0]);
 
@@ -38,7 +39,8 @@ describe('Update README.md', () => {
             }
 
             resolve(new Buffer('[' + file + '](lib/' + file +
-              ') | ' + info.category + ' | ' + info.notes + '\n'));
+              ') ([test](test/' + test + ')) | ' + info.category +
+              ' | ' + info.notes + '\n'));
           });
         })
         .then((buffer) => {
@@ -49,7 +51,7 @@ describe('Update README.md', () => {
         });
       }, (err) => {
         fs.close(fd);
-        expect(err).to.equal(undefined);
+        expect(err).to.equal(null);
         done();
       });
     });
