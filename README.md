@@ -5,7 +5,7 @@
 File | Category | Notes
 :--- | :------- | :----
 [arrays_to_tree.js](lib/arrays_to_tree.js) ([test](test/arrays_to_tree_test.js)) | FP | Converting from arrays to a deeper tree
-[breathfirst.js](lib/breathfirst.js) ([test](test/breathfirst_test.js)) | Tree | Breath-first traversal
+[breadthfirst.js](lib/breadthfirst.js) ([test](test/breadthfirst_test.js)) | Tree | Breadth-first traversal
 [fibonacci.js](lib/fibonacci.js) ([test](test/fibonacci_test.js)) | DP | Fibonacci number
 [iterable.js](lib/iterable.js) ([test](test/iterable_test.js)) | Iterator | Make an iterable object
 [my_array.js](lib/my_array.js) ([test](test/my_array_test.js)) | Array | Implement Array.concatAll and zip
