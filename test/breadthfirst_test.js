@@ -1,13 +1,13 @@
 'use strict';
 
-import { BinaryTreeNode } from '../lib/breathfirst.js';
+import { BinaryTreeNode } from '../lib/breadthfirst.js';
 let expect = require('chai').expect;
 
-describe('Breath-first traversal tests', () => {
+describe('Breadth-first traversal tests', () => {
   let treeNode;
   beforeEach(() => { treeNode = new BinaryTreeNode(10); });
 
-  it('should print in breath-first traversal sequence', () => {
+  it('should print in breadth-first traversal sequence', () => {
     expect(treeNode //(10)
       .add(4)
       .add(2)
@@ -20,7 +20,7 @@ describe('Breath-first traversal tests', () => {
       .add(20)
       .add(24)
       .add(22)
-      .printBreathFirst()
+      .printBreadthFirst()
     )
     .to.equal(
       '10\n' +
@@ -33,6 +33,6 @@ describe('Breath-first traversal tests', () => {
   });
 
   it('should print root node element when the tree has no sub tree', () => {
-    expect(treeNode.printBreathFirst()).to.equal('10\n');
+    expect(treeNode.printBreadthFirst()).to.equal('10\n');
   });
 });
