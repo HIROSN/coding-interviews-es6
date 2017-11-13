@@ -7,7 +7,7 @@
 
 'use strict';
 
-import { MyArray } from '../lib/my_array.js';
+import { MyArray } from '../lib/my-array.js';
 
 var movieLists = [
   {
