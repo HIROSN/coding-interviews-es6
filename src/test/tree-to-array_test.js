@@ -1,6 +1,6 @@
 'use strict';
 
-import { videos } from '../lib/tree_to_array.js';
+import { videos } from '../lib/tree-to-array.js';
 let expect = require('chai').expect;
 
 describe('Videos tests', () => {

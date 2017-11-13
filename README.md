@@ -4,10 +4,10 @@
 
 File | Category | Notes
 :--- | :------- | :----
-[arrays_to_tree.js](lib/arrays_to_tree.js) ([test](test/arrays_to_tree_test.js)) | FP | Converting from arrays to a deeper tree
-[breadthfirst.js](lib/breadthfirst.js) ([test](test/breadthfirst_test.js)) | Tree | Breadth-first traversal
-[fibonacci.js](lib/fibonacci.js) ([test](test/fibonacci_test.js)) | DP | Fibonacci number
-[iterable.js](lib/iterable.js) ([test](test/iterable_test.js)) | Iterator | Make an iterable object
-[my_array.js](lib/my_array.js) ([test](test/my_array_test.js)) | Array | Implement Array.concatAll and zip
-[palindrome.js](lib/palindrome.js) ([test](test/palindrome_test.js)) | Algorithm | Check if a linked list is palindrome
-[tree_to_array.js](lib/tree_to_array.js) ([test](test/tree_to_array_test.js)) | FP | Converting from a deeper tree to an array
+[arrays-to-tree.js](src/lib/arrays-to-tree.js) ([test](src/test/arrays-to-tree_test.js)) | FP | Converting from arrays to a deeper tree
+[breadthfirst.js](src/lib/breadthfirst.js) ([test](src/test/breadthfirst_test.js)) | Tree | Breadth-first traversal
+[fibonacci.js](src/lib/fibonacci.js) ([test](src/test/fibonacci_test.js)) | DP | Fibonacci number
+[iterable.js](src/lib/iterable.js) ([test](src/test/iterable_test.js)) | Iterator | Make an iterable object
+[my-array.js](src/lib/my-array.js) ([test](src/test/my-array_test.js)) | Array | Implement Array.concatAll and zip
+[palindrome.js](src/lib/palindrome.js) ([test](src/test/palindrome_test.js)) | Algorithm | Check if a linked list is palindrome
+[tree-to-array.js](src/lib/tree-to-array.js) ([test](src/test/tree-to-array_test.js)) | FP | Converting from a deeper tree to an array

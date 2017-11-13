@@ -4,7 +4,7 @@ let fs = require('fs');
 let expect = require('chai').expect;
 let async = require('async');
 
-const libPath = __dirname + '/../lib/';
+const libPath = __dirname + '/../src/lib/';
 const readMePath = __dirname + '/../README.md';
 const options = {encoding: 'utf8'};
 
@@ -38,8 +38,8 @@ describe('Update README.md', () => {
               return callback('add category and notes');
             }
 
-            resolve(new Buffer('[' + file + '](lib/' + file +
-              ') ([test](test/' + test + ')) | ' + info.category +
+            resolve(new Buffer('[' + file + '](src/lib/' + file +
+              ') ([test](src/test/' + test + ')) | ' + info.category +
               ' | ' + info.notes + '\n'));
           });
         })
